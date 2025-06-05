@@ -12,9 +12,11 @@
 }
 .nav-list {
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  position: absolute;
   gap: 40px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .nav-link {
   position: relative;
@@ -22,6 +24,8 @@
   font-weight: 500;
   letter-spacing: 0.02em;
   transition: 200ms ease-in;
+  background-color: #dddddd;
+  padding: 40px;
 }
 .nav-link:hover,
 .nav-link:focus {

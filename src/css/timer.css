@@ -1,0 +1,98 @@
+@import url('./reset.css');
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #dddddd;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  width: 450px;
+  height: 200px;
+  background-color: #ffffff;
+  border-radius: 6px;
+}
+
+#datetime-picker {
+  width: 272px;
+  height: 40px;
+  border-radius: 4px;
+  border: 1px solid rgba(128, 128, 128, 1);
+  padding-left: 16px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.04%;
+  color: rgba(46, 47, 66, 1);
+  margin-bottom: 32px;
+  margin-right: 8px;
+  margin-left: 36px;
+  margin-top: 25px;
+}
+
+#datetime-picker:hover,
+#datetime-picker:focus {
+  border-color: rgba(0, 0, 0, 1);
+}
+
+#datetime-picker:disabled {
+  border-color: rgba(128, 128, 128, 1);
+  color: rgba(128, 128, 128, 1);
+}
+
+button {
+  width: 75px;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  background-color: rgba(78, 117, 255, 1);
+  color: rgba(255, 255, 255, 1);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.04%;
+}
+
+button:hover,
+button:focus {
+  background-color: rgba(108, 140, 255, 1);
+}
+
+button:disabled {
+  background-color: rgba(207, 207, 207, 1);
+  color: rgba(152, 152, 152, 1);
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.value {
+  color: rgba(46, 47, 66, 1);
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: 0.04%;
+  align-self: center;
+}
+
+.label {
+  color: rgba(46, 47, 66, 1);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  align-self: center;
+  text-transform: uppercase;
+}
