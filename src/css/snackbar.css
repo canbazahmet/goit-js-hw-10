@@ -1,0 +1,96 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #dddddd;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form {
+  width: 450px;
+  height: 280px;
+  background-color: #ffffff;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type='number'] {
+  width: 370px;
+  height: 40px;
+  border-radius: 6px;
+  border: 1px solid rgba(128, 128, 128, 1);
+  padding-left: 16px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: rgba(46, 47, 66, 1);
+  display: block;
+  margin-bottom: 16px;
+}
+
+input[type='number']:hover,
+input[type='number']:focus {
+  border-color: rgba(0, 0, 0, 1);
+}
+
+label,
+legend,
+button {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: rgba(46, 47, 66, 1);
+}
+
+fieldset {
+  width: 360px;
+  height: 64px;
+  border: 1px solid rgba(128, 128, 128, 1);
+  border-radius: 6px;
+  margin: 0;
+  padding: 0;
+  padding-left: 28px;
+  padding-bottom: 8px;
+  padding-top: 14px;
+  display: flex;
+  gap: 48px;
+}
+
+fieldset:hover,
+fieldset:focus {
+  border-color: rgba(0, 0, 0, 1);
+}
+
+input[type='radio'] {
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgba(117, 117, 117, 1);
+  margin-right: 8px;
+  margin-left: 28px;
+}
+
+input[type='radio']:hover,
+input[type='radio']:focus {
+  border-color: rgba(0, 0, 0, 1);
+}
+
+button {
+  width: 390px;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  background-color: rgba(78, 117, 255, 1);
+  color: rgba(255, 255, 255, 1);
+  margin-top: 24px;
+}
+
+button:hover,
+button:focus {
+  background-color: rgba(108, 140, 255, 1);
+}
