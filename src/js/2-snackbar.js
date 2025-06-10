@@ -2,47 +2,43 @@ import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
 const form = document.querySelector('.form');
-const inputMs = document.querySelector('input[name="delay"]');
-const radioFulfilled = document.querySelector(
-  'input[name="state"][value="fulfilled"]'
-);
-const radioRejected = document.querySelector(
-  'input[name="state"][value="rejected"]'
-);
 
-form.addEventListener('submit', event => {
-  event.preventDefault();
-  const makeNewPromise = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      if (radioFulfilled.checked) {
-        resolve();
-      } else if (radioRejected.checked) {
-        reject();
-      }
-    }, inputMs.value);
-  });
+form.addEventListener('submit', handleSubmitForm);
 
-  makeNewPromise
-    .then(() => {
+function handleSubmitForm(evt) {
+  evt.preventDefault();
+  const delay = Number(evt.currentTarget.elements.delay.value);
+  const state = evt.currentTarget.elements.state.value;
+
+  createPromise(delay, state)
+    .then(({ delay }) => {
       iziToast.show({
-        message: `Fulfilled promise in ${inputMs.value}ms`,
-        position: 'topCenter',
-        messageColor: 'rgba(255, 255, 255, 1)',
-        messageSize: '16px',
-        backgroundColor: 'rgba(89, 161, 13, 1)',
-        close: false,
-        timeout: 1500,
+        title: 'Success',
+        message: `✅ Fulfilled promise in ${delay}ms`,
+        color: 'green',
+        position: 'topRight',
       });
     })
-    .catch(() => {
+    .catch(({ delay }) => {
       iziToast.show({
-        message: `Rejected promise in ${inputMs.value}ms`,
-        position: 'topCenter',
-        messageColor: 'rgba(255, 255, 255, 1)',
-        messageSize: '16px',
-        backgroundColor: 'rgba(181, 27, 27, 1)',
-        close: false,
-        timeout: 1500,
+        title: 'Error',
+        message: `❌ Rejected promise in ${delay}ms`,
+        color: 'red',
+        position: 'topRight',
       });
     });
-});
+
+  evt.currentTarget.reset();
+}
+
+function createPromise(delay, state) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (state === 'fulfilled') {
+        resolve({ delay });
+      } else {
+        reject({ delay });
+      }
+    }, delay);
+  });
+}
